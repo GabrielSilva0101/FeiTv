@@ -4,21 +4,86 @@
  */
 package view;
 
+import controller.ControleCadastro;
+import java.awt.Label;
+import java.awt.TextField;
+import javax.swing.JButton;
+
+
 /**
  *
  * @author gabri
  */
 public class Cadastro extends javax.swing.JFrame {
     
-    private static final java.util.logging.Logger logger = java.util.logging.Logger.getLogger(Cadastro.class.getName());
-
     /**
      * Creates new form Cadastro
      */
     public Cadastro() {
         initComponents();
+        c= new ControleCadastro(this);
     }
 
+    public JButton getBt_salvar() {
+        return bt_salvar;
+    }
+
+    public void setBt_salvar(JButton bt_salvar) {
+        this.bt_salvar = bt_salvar;
+    }
+
+    public Label getLbl_nome() {
+        return lbl_nome;
+    }
+
+    public void setLbl_nome(Label lbl_nome) {
+        this.lbl_nome = lbl_nome;
+    }
+
+    public Label getLbl_senha() {
+        return lbl_senha;
+    }
+
+    public void setLbl_senha(Label lbl_senha) {
+        this.lbl_senha = lbl_senha;
+    }
+
+    public Label getLbl_usuario() {
+        return lbl_usuario;
+    }
+
+    public void setLbl_usuario(Label lbl_usuario) {
+        this.lbl_usuario = lbl_usuario;
+    }
+
+    public TextField getTxt_nome() {
+        return txt_nome;
+    }
+
+    public void setTxt_nome(TextField txt_nome) {
+        this.txt_nome = txt_nome;
+    }
+
+    public TextField getTxt_senha() {
+        return txt_senha;
+    }
+
+    public void setTxt_senha(TextField txt_senha) {
+        this.txt_senha = txt_senha;
+    }
+
+    public TextField getTxt_usuario() {
+        return txt_usuario;
+    }
+
+    public void setTxt_usuario(TextField txt_usuario) {
+        this.txt_usuario = txt_usuario;
+    }
+
+    
+    
+    
+    
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -45,6 +110,7 @@ public class Cadastro extends javax.swing.JFrame {
         lbl_senha.setText("Senha");
 
         bt_salvar.setText("Salvar");
+        bt_salvar.addActionListener(this::bt_salvarActionPerformed);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -89,6 +155,12 @@ public class Cadastro extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    private void bt_salvarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bt_salvarActionPerformed
+
+        c.salvarUsuario();
+        // TODO add your handling code here:
+    }//GEN-LAST:event_bt_salvarActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -114,6 +186,9 @@ public class Cadastro extends javax.swing.JFrame {
 //        java.awt.EventQueue.invokeLater(() -> new Cadastro().setVisible(true));
 //    }
 
+    
+    private ControleCadastro c;
+    
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton bt_salvar;
     private java.awt.Label lbl_nome;

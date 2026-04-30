@@ -4,6 +4,14 @@
  */
 package view;
 
+import java.awt.Label;
+import java.awt.Panel;
+import java.awt.TextField;
+import javax.swing.JButton;
+import javax.swing.JComboBox;
+import javax.swing.JPanel;
+import javax.swing.JScrollPane;
+
 /**
  *
  * @author gabri
@@ -18,6 +26,105 @@ public class Videos extends javax.swing.JFrame {
     public Videos() {
         initComponents();
     }
+
+    public JButton getBt_gostei() {
+        return bt_gostei;
+    }
+
+    public void setBt_gostei(JButton bt_gostei) {
+        this.bt_gostei = bt_gostei;
+    }
+
+    public JButton getBt_meusvideos() {
+        return bt_meusvideos;
+    }
+
+    public void setBt_meusvideos(JButton bt_meusvideos) {
+        this.bt_meusvideos = bt_meusvideos;
+    }
+
+    public JButton getBt_ngostei() {
+        return bt_ngostei;
+    }
+
+    public void setBt_ngostei(JButton bt_ngostei) {
+        this.bt_ngostei = bt_ngostei;
+    }
+
+    public JButton getBt_pesquisar() {
+        return bt_pesquisar;
+    }
+
+    public void setBt_pesquisar(JButton bt_pesquisar) {
+        this.bt_pesquisar = bt_pesquisar;
+    }
+
+    public JButton getBt_sair() {
+        return bt_sair;
+    }
+
+    public void setBt_sair(JButton bt_sair) {
+        this.bt_sair = bt_sair;
+    }
+
+    public JButton getBt_voltar() {
+        return bt_voltar;
+    }
+
+    public void setBt_voltar(JButton bt_voltar) {
+        this.bt_voltar = bt_voltar;
+    }
+
+    public JScrollPane getjScrollPane2() {
+        return jScrollPane2;
+    }
+
+    public void setjScrollPane2(JScrollPane jScrollPane2) {
+        this.jScrollPane2 = jScrollPane2;
+    }
+
+    public Label getLbl_filme() {
+        return lbl_filme;
+    }
+
+    public void setLbl_filme(Label lbl_filme) {
+        this.lbl_filme = lbl_filme;
+    }
+
+    public JComboBox<String> getList_playlists() {
+        return list_playlists;
+    }
+
+    public void setList_playlists(JComboBox<String> list_playlists) {
+        this.list_playlists = list_playlists;
+    }
+
+    public JPanel getPanel_resulbck() {
+        return panel_resulbck;
+    }
+
+    public void setPanel_resulbck(JPanel panel_resulbck) {
+        this.panel_resulbck = panel_resulbck;
+    }
+
+    public Panel getPanel_result() {
+        return panel_result;
+    }
+
+    public void setPanel_result(Panel panel_result) {
+        this.panel_result = panel_result;
+    }
+
+    public TextField getTxt_pesquisar() {
+        return txt_pesquisar;
+    }
+
+    public void setTxt_pesquisar(TextField txt_pesquisar) {
+        this.txt_pesquisar = txt_pesquisar;
+    }
+    
+    
+    
 
     /**
      * This method is called from within the constructor to initialize the form.

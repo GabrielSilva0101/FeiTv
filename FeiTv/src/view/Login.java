@@ -4,21 +4,78 @@
  */
 package view;
 
+import controller.ControleLogin;
+import java.awt.Label;
+import java.awt.TextField;
+import javax.swing.JButton;
+
 /**
  *
  * @author gabri
  */
 public class Login extends javax.swing.JFrame {
     
-    private static final java.util.logging.Logger logger = java.util.logging.Logger.getLogger(Login.class.getName());
-
     /**
      * Creates new form Login
      */
     public Login() {
         initComponents();
+        
+        c = new ControleLogin (this);
+    }
+    
+
+    public JButton getBt_cadastro() {
+        return bt_cadastro;
     }
 
+    public void setBt_cadastro(JButton bt_cadastro) {
+        this.bt_cadastro = bt_cadastro;
+    }
+
+    public JButton getBt_entrar() {
+        return bt_entrar;
+    }
+
+    public void setBt_entrar(JButton bt_entrar) {
+        this.bt_entrar = bt_entrar;
+    }
+
+    public Label getLbl_senha() {
+        return lbl_senha;
+    }
+
+    public void setLbl_senha(Label lbl_senha) {
+        this.lbl_senha = lbl_senha;
+    }
+
+    public Label getLbl_usuario() {
+        return lbl_usuario;
+    }
+
+    public void setLbl_usuario(Label lbl_usuario) {
+        this.lbl_usuario = lbl_usuario;
+    }
+
+    public TextField getTxt_senha() {
+        return txt_senha;
+    }
+
+    public void setTxt_senha(TextField txt_senha) {
+        this.txt_senha = txt_senha;
+    }
+
+    public TextField getTxt_usuario() {
+        return txt_usuario;
+    }
+
+    public void setTxt_usuario(TextField txt_usuario) {
+        this.txt_usuario = txt_usuario;
+    }
+
+    
+    
+    
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -44,8 +101,10 @@ public class Login extends javax.swing.JFrame {
         txt_senha.addActionListener(this::txt_senhaActionPerformed);
 
         bt_entrar.setText("Entrar");
+        bt_entrar.addActionListener(this::bt_entrarActionPerformed);
 
         bt_cadastro.setText("Cadastrar");
+        bt_cadastro.addActionListener(this::bt_cadastroActionPerformed);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -93,6 +152,18 @@ public class Login extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_txt_senhaActionPerformed
 
+    private void bt_entrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bt_entrarActionPerformed
+   c.loginUsuarios();
+        // TODO add your handling code here:
+    }//GEN-LAST:event_bt_entrarActionPerformed
+
+    private void bt_cadastroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bt_cadastroActionPerformed
+        
+        Cadastro cad = new Cadastro();
+        cad.setVisible(true);
+        
+    }//GEN-LAST:event_bt_cadastroActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -118,6 +189,8 @@ public class Login extends javax.swing.JFrame {
 //        java.awt.EventQueue.invokeLater(() -> new Login().setVisible(true));
 //    }
 
+    private ControleLogin c;
+    
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton bt_cadastro;
     private javax.swing.JButton bt_entrar;

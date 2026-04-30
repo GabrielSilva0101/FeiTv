@@ -4,21 +4,104 @@
  */
 package view;
 
+import java.awt.Label;
+import java.awt.TextField;
+import javax.swing.JButton;
+import javax.swing.JMenuItem;
+import javax.swing.JToggleButton;
+import controller.ControlePaginaInicial;
+import model.Usuarios;
+
+
 /**
  *
  * @author gabri
  */
 public class PaginaInicial extends javax.swing.JFrame {
     
-    private static final java.util.logging.Logger logger = java.util.logging.Logger.getLogger(PaginaInicial.class.getName());
-
     /**
      * Creates new form PaginaInicial
      */
-    public PaginaInicial() {
+    public PaginaInicial(Usuarios usuarios) {
         initComponents();
+        lbl_bemvindo.setText((usuarios.getNome()));
+        c = new ControlePaginaInicial(this,usuarios);
     }
 
+    public JButton getBt_curtidas() {
+        return bt_curtidas;
+    }
+
+    public void setBt_curtidas(JButton bt_curtidas) {
+        this.bt_curtidas = bt_curtidas;
+    }
+
+    public JButton getBt_meusvideos() {
+        return bt_meusvideos;
+    }
+
+    public void setBt_meusvideos(JButton bt_meusvideos) {
+        this.bt_meusvideos = bt_meusvideos;
+    }
+
+    public JButton getBt_pesquisar() {
+        return bt_pesquisar;
+    }
+
+    public void setBt_pesquisar(JButton bt_pesquisar) {
+        this.bt_pesquisar = bt_pesquisar;
+    }
+
+    public JButton getBt_sair() {
+        return bt_sair;
+    }
+
+    public void setBt_sair(JButton bt_sair) {
+        this.bt_sair = bt_sair;
+    }
+
+    public JButton getjButton2() {
+        return jButton2;
+    }
+
+    public void setjButton2(JButton jButton2) {
+        this.jButton2 = jButton2;
+    }
+
+    public JMenuItem getjMenuItem1() {
+        return jMenuItem1;
+    }
+
+    public void setjMenuItem1(JMenuItem jMenuItem1) {
+        this.jMenuItem1 = jMenuItem1;
+    }
+
+    public JToggleButton getjToggleButton1() {
+        return jToggleButton1;
+    }
+
+    public void setjToggleButton1(JToggleButton jToggleButton1) {
+        this.jToggleButton1 = jToggleButton1;
+    }
+
+    public Label getLbl_bemvindo() {
+        return lbl_bemvindo;
+    }
+
+    public void setLbl_bemvindo(Label lbl_bemvindo) {
+        this.lbl_bemvindo = lbl_bemvindo;
+    }
+
+    public TextField getTxt_pesquisar() {
+        return txt_pesquisar;
+    }
+
+    public void setTxt_pesquisar(TextField txt_pesquisar) {
+        this.txt_pesquisar = txt_pesquisar;
+    }
+
+    
+    
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -133,6 +216,9 @@ public class PaginaInicial extends javax.swing.JFrame {
 //        java.awt.EventQueue.invokeLater(() -> new PaginaInicial().setVisible(true));
 //    }
 
+    private ControlePaginaInicial c;
+    
+    
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton bt_curtidas;
     private javax.swing.JButton bt_meusvideos;

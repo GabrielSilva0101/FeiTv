@@ -3,7 +3,7 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Main.java to edit this template
  */
 package feitv;
-
+import view.Login;
 /**
  *
  * @author gabri
@@ -14,7 +14,8 @@ public class FeiTv {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        // TODO code application logic here
+        Login l = new Login();
+        l.setVisible(true);
     }
     
 }
