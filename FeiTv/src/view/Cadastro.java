@@ -80,6 +80,22 @@ public class Cadastro extends javax.swing.JFrame {
         this.txt_usuario = txt_usuario;
     }
 
+    public ControleCadastro getC() {
+        return c;
+    }
+
+    public void setC(ControleCadastro c) {
+        this.c = c;
+    }
+
+    public JButton getBt_voltar() {
+        return bt_voltar;
+    }
+
+    public void setBt_voltar(JButton bt_voltar) {
+        this.bt_voltar = bt_voltar;
+    }
+
     
     
     
@@ -100,6 +116,7 @@ public class Cadastro extends javax.swing.JFrame {
         txt_senha = new java.awt.TextField();
         lbl_senha = new java.awt.Label();
         bt_salvar = new javax.swing.JButton();
+        bt_voltar = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -112,14 +129,20 @@ public class Cadastro extends javax.swing.JFrame {
         bt_salvar.setText("Salvar");
         bt_salvar.addActionListener(this::bt_salvarActionPerformed);
 
+        bt_voltar.setText("Voltar");
+        bt_voltar.addActionListener(this::bt_voltarActionPerformed);
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addGap(67, 67, 67)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(bt_salvar)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(bt_voltar)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 33, Short.MAX_VALUE)
+                        .addComponent(bt_salvar))
                     .addGroup(layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                             .addComponent(lbl_usuario, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -148,7 +171,9 @@ public class Cadastro extends javax.swing.JFrame {
                     .addComponent(txt_senha, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(lbl_senha, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(26, 26, 26)
-                .addComponent(bt_salvar)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(bt_salvar)
+                    .addComponent(bt_voltar))
                 .addContainerGap(101, Short.MAX_VALUE))
         );
 
@@ -160,6 +185,13 @@ public class Cadastro extends javax.swing.JFrame {
         c.salvarUsuario();
         // TODO add your handling code here:
     }//GEN-LAST:event_bt_salvarActionPerformed
+
+    private void bt_voltarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bt_voltarActionPerformed
+       
+        
+        this.setVisible(false);
+        
+    }//GEN-LAST:event_bt_voltarActionPerformed
 
     /**
      * @param args the command line arguments
@@ -191,6 +223,7 @@ public class Cadastro extends javax.swing.JFrame {
     
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton bt_salvar;
+    private javax.swing.JButton bt_voltar;
     private java.awt.Label lbl_nome;
     private java.awt.Label lbl_senha;
     private java.awt.Label lbl_usuario;
