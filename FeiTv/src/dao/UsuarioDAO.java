@@ -1,43 +1,36 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
 package dao;
 
+import model.Usuario;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
-import java.sql.SQLException;
 import java.sql.ResultSet;
-import model.Usuarios;
+import java.sql.SQLException;
 
 public class UsuarioDAO {
-
     private Connection conn;
 
     public UsuarioDAO(Connection conn) {
         this.conn = conn;
     }
 
-    public ResultSet consultar(Usuarios usuarios) throws SQLException {
-        String sql = "select * from tbusuarios where usuario = ? and senha =?";
+    // Funcionalidade: Cadastrar novo usuário
+    public void inserir(Usuario usuario) throws SQLException {
+        String sql = "INSERT INTO tbusuarios (nome, usuario, senha) VALUES (?, ?, ?)";
         PreparedStatement statement = conn.prepareStatement(sql);
-        statement.setString(1, usuarios.getUsuario());
-        statement.setString(2, usuarios.getSenha());
+        statement.setString(1, usuario.getNome());
+        statement.setString(2, usuario.getUsuario());
+        statement.setString(3, usuario.getSenha());
         statement.execute();
-        ResultSet resultado = statement.getResultSet();
-        return resultado;
-
+        statement.close();
     }
 
-    public void inserir(Usuarios usuarios) throws SQLException {
-        String sql = "insert into tbusuarios (nome, usuario, senha) values ('"
-                + usuarios.getNome() + "','"
-                + usuarios.getUsuario() + "','"
-                + usuarios.getSenha() + "')";
+    // Funcionalidade: Login de usuário
+    public ResultSet consultar(Usuario usuario) throws SQLException {
+        String sql = "SELECT * FROM tbusuarios WHERE usuario = ? AND senha = ?";
         PreparedStatement statement = conn.prepareStatement(sql);
-        statement.execute();
-        conn.close();
-
+        statement.setString(1, usuario.getUsuario());
+        statement.setString(2, usuario.getSenha());
+        // O ResultSet é retornado para o Controller verificar se achou alguém
+        return statement.executeQuery(); 
     }
-
 }

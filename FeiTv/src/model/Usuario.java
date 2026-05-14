@@ -8,13 +8,13 @@ package model;
  *
  * @author gabri
  */
-public class Usuarios {
+public class Usuario {
     private String nome, usuario, senha;
 
-    public Usuarios() {
+    public Usuario() {
     }
 
-    public Usuarios(String nome, String usuario, String senha) {
+    public Usuario(String nome, String usuario, String senha) {
         this.nome = nome;
         this.usuario = usuario;
         this.senha = senha;

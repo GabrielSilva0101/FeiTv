@@ -5,10 +5,10 @@
 package controller;
 
 import dao.UsuarioDAO;
-import dao.ConexaoUsuarios;
-import model.Usuarios;
-import view.Login;
-import view.PaginaInicial;
+import dao.Conexao;
+import model.Usuario;
+import view.TelaLogin;
+import view.TelaPrincipal;
 import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -17,15 +17,15 @@ import javax.swing.JOptionPane;
 
 
 public class ControleLogin {
-    private Login telal;
+    private TelaLogin telal;
 
-    public ControleLogin(Login telal) {
+    public ControleLogin(TelaLogin telal) {
         this.telal = telal;
     }
     
     public void loginUsuarios (){
-        Usuarios usuarios = new Usuarios (null, telal.getTxt_usuario().getText(), telal.getTxt_senha().getText());
-        ConexaoUsuarios conexao = new ConexaoUsuarios ();
+        Usuario usuarios = new Usuario (null, telal.getTxt_usuario().getText(), telal.getTxt_senha().getText());
+        Conexao conexao = new Conexao ();
         try{
             Connection conn = conexao.getConnection();
             UsuarioDAO dao = new UsuarioDAO(conn);
@@ -37,7 +37,7 @@ public class ControleLogin {
             String usuario = res.getString("usuario");
             String senha = res.getString("senha");
             
-            PaginaInicial tela2 = new PaginaInicial (new Usuarios(nome, usuario, senha));
+            TelaPrincipal tela2 = new TelaPrincipal (new Usuario(nome, usuario, senha));
             tela2.setVisible(true);
             telal.setVisible(false);            
             } else {

@@ -4,10 +4,13 @@
  */
 package view;
 
-import controller.ControleCadastro;
+import controller.ControleUsuario;
 import java.awt.Label;
 import java.awt.TextField;
 import javax.swing.JButton;
+import javax.swing.JLabel;
+import javax.swing.JSeparator;
+
 
 
 /**
@@ -21,7 +24,16 @@ public class Cadastro extends javax.swing.JFrame {
      */
     public Cadastro() {
         initComponents();
-        c= new ControleCadastro(this);
+        setLocationRelativeTo(null);
+       
+    }
+
+    public ControleUsuario getC() {
+        return c;
+    }
+
+    public void setC(ControleUsuario c) {
+        this.c = c;
     }
 
     public JButton getBt_salvar() {
@@ -32,28 +44,52 @@ public class Cadastro extends javax.swing.JFrame {
         this.bt_salvar = bt_salvar;
     }
 
-    public Label getLbl_nome() {
+    public JButton getBt_voltar() {
+        return bt_voltar;
+    }
+
+    public void setBt_voltar(JButton bt_voltar) {
+        this.bt_voltar = bt_voltar;
+    }
+
+    public JSeparator getjSeparator1() {
+        return jSeparator1;
+    }
+
+    public void setjSeparator1(JSeparator jSeparator1) {
+        this.jSeparator1 = jSeparator1;
+    }
+
+    public JLabel getLbl_frut() {
+        return lbl_frut;
+    }
+
+    public void setLbl_frut(JLabel lbl_frut) {
+        this.lbl_frut = lbl_frut;
+    }
+
+    public JLabel getLbl_nome() {
         return lbl_nome;
     }
 
-    public void setLbl_nome(Label lbl_nome) {
+    public void setLbl_nome(JLabel lbl_nome) {
         this.lbl_nome = lbl_nome;
     }
 
-    public Label getLbl_senha() {
+    public JLabel getLbl_senha() {
         return lbl_senha;
     }
 
-    public void setLbl_senha(Label lbl_senha) {
+    public void setLbl_senha(JLabel lbl_senha) {
         this.lbl_senha = lbl_senha;
     }
 
-    public Label getLbl_usuario() {
-        return lbl_usuario;
+    public JLabel getLbl_usuario1() {
+        return lbl_usuario1;
     }
 
-    public void setLbl_usuario(Label lbl_usuario) {
-        this.lbl_usuario = lbl_usuario;
+    public void setLbl_usuario1(JLabel lbl_usuario1) {
+        this.lbl_usuario1 = lbl_usuario1;
     }
 
     public TextField getTxt_nome() {
@@ -80,22 +116,7 @@ public class Cadastro extends javax.swing.JFrame {
         this.txt_usuario = txt_usuario;
     }
 
-    public ControleCadastro getC() {
-        return c;
-    }
-
-    public void setC(ControleCadastro c) {
-        this.c = c;
-    }
-
-    public JButton getBt_voltar() {
-        return bt_voltar;
-    }
-
-    public void setBt_voltar(JButton bt_voltar) {
-        this.bt_voltar = bt_voltar;
-    }
-
+ 
     
     
     
@@ -109,87 +130,70 @@ public class Cadastro extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        lbl_nome = new java.awt.Label();
-        lbl_usuario = new java.awt.Label();
         txt_nome = new java.awt.TextField();
         txt_usuario = new java.awt.TextField();
         txt_senha = new java.awt.TextField();
-        lbl_senha = new java.awt.Label();
         bt_salvar = new javax.swing.JButton();
         bt_voltar = new javax.swing.JButton();
+        lbl_nome = new javax.swing.JLabel();
+        lbl_senha = new javax.swing.JLabel();
+        lbl_usuario1 = new javax.swing.JLabel();
+        lbl_frut = new javax.swing.JLabel();
+        jSeparator1 = new javax.swing.JSeparator();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+        getContentPane().add(txt_nome, new org.netbeans.lib.awtextra.AbsoluteConstraints(262, 143, 100, -1));
+        getContentPane().add(txt_usuario, new org.netbeans.lib.awtextra.AbsoluteConstraints(262, 189, 100, -1));
+        getContentPane().add(txt_senha, new org.netbeans.lib.awtextra.AbsoluteConstraints(262, 245, 100, -1));
 
-        lbl_nome.setText("Nome");
-
-        lbl_usuario.setText("Usuario");
-
-        lbl_senha.setText("Senha");
-
+        bt_salvar.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         bt_salvar.setText("Salvar");
+        bt_salvar.setContentAreaFilled(false);
         bt_salvar.addActionListener(this::bt_salvarActionPerformed);
+        getContentPane().add(bt_salvar, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 310, -1, -1));
 
+        bt_voltar.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         bt_voltar.setText("Voltar");
+        bt_voltar.setContentAreaFilled(false);
         bt_voltar.addActionListener(this::bt_voltarActionPerformed);
+        getContentPane().add(bt_voltar, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 310, -1, -1));
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-        getContentPane().setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(67, 67, 67)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(bt_voltar)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 33, Short.MAX_VALUE)
-                        .addComponent(bt_salvar))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(lbl_usuario, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(lbl_nome, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(lbl_senha, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(32, 32, 32)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(txt_senha, javax.swing.GroupLayout.DEFAULT_SIZE, 100, Short.MAX_VALUE)
-                            .addComponent(txt_usuario, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(txt_nome, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
-                .addContainerGap(156, Short.MAX_VALUE))
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(60, 60, 60)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(lbl_nome, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(txt_nome, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(txt_usuario, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(lbl_usuario, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(20, 20, 20)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(txt_senha, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(lbl_senha, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(26, 26, 26)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(bt_salvar)
-                    .addComponent(bt_voltar))
-                .addContainerGap(101, Short.MAX_VALUE))
-        );
+        lbl_nome.setBackground(new java.awt.Color(242, 151, 65));
+        lbl_nome.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
+        lbl_nome.setText("Nome");
+        getContentPane().add(lbl_nome, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 130, -1, -1));
+
+        lbl_senha.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
+        lbl_senha.setText("Senha");
+        getContentPane().add(lbl_senha, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 240, -1, -1));
+
+        lbl_usuario1.setBackground(new java.awt.Color(242, 151, 65));
+        lbl_usuario1.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
+        lbl_usuario1.setText("Usuário");
+        getContentPane().add(lbl_usuario1, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 180, -1, -1));
+
+        lbl_frut.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/Gemini_Generated_Image_53onjh53onjh53on.png"))); // NOI18N
+        lbl_frut.setOpaque(true);
+        getContentPane().add(lbl_frut, new org.netbeans.lib.awtextra.AbsoluteConstraints(-90, -10, 670, 560));
+        getContentPane().add(jSeparator1, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 430, -1, -1));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
     private void bt_salvarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bt_salvarActionPerformed
+  
+    String nome = txt_nome.getText();
+    String usuario = txt_usuario.getText();
+    String senha = txt_senha.getText(); 
 
-        c.salvarUsuario();
-        // TODO add your handling code here:
+    c.cadastrarUsuario(nome, usuario, senha);
     }//GEN-LAST:event_bt_salvarActionPerformed
 
     private void bt_voltarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bt_voltarActionPerformed
        
-        
-        this.setVisible(false);
+        this.dispose();
+        new TelaLogin().setVisible(true);
         
     }//GEN-LAST:event_bt_voltarActionPerformed
 
@@ -219,14 +223,16 @@ public class Cadastro extends javax.swing.JFrame {
 //    }
 
     
-    private ControleCadastro c;
+    ControleUsuario c = new ControleUsuario();
     
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton bt_salvar;
     private javax.swing.JButton bt_voltar;
-    private java.awt.Label lbl_nome;
-    private java.awt.Label lbl_senha;
-    private java.awt.Label lbl_usuario;
+    private javax.swing.JSeparator jSeparator1;
+    private javax.swing.JLabel lbl_frut;
+    private javax.swing.JLabel lbl_nome;
+    private javax.swing.JLabel lbl_senha;
+    private javax.swing.JLabel lbl_usuario1;
     private java.awt.TextField txt_nome;
     private java.awt.TextField txt_senha;
     private java.awt.TextField txt_usuario;

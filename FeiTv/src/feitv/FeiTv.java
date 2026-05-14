@@ -3,7 +3,7 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Main.java to edit this template
  */
 package feitv;
-import view.Login;
+import view.TelaLogin;
 /**
  *
  * @author gabri
@@ -14,7 +14,7 @@ public class FeiTv {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        Login l = new Login();
+        TelaLogin l = new TelaLogin();
         l.setVisible(true);
     }
     

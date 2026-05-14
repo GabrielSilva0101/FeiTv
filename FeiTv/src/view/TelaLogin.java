@@ -5,25 +5,28 @@
 package view;
 
 import controller.ControleLogin;
-import java.awt.Label;
 import java.awt.TextField;
 import javax.swing.JButton;
-
+import javax.swing.JLabel;
 /**
  *
  * @author gabri
  */
-public class Login extends javax.swing.JFrame {
+public class TelaLogin extends javax.swing.JFrame {
     
     /**
      * Creates new form Login
      */
-    public Login() {
+    public TelaLogin() {
         initComponents();
+        setLocationRelativeTo(null);
         
-        c = new ControleLogin (this);
+        this.controle = new ControleLogin(this);
     }
-    
+
+    public ControleLogin getControle() {
+        return controle;
+    }
 
     public JButton getBt_cadastro() {
         return bt_cadastro;
@@ -41,19 +44,35 @@ public class Login extends javax.swing.JFrame {
         this.bt_entrar = bt_entrar;
     }
 
-    public Label getLbl_senha() {
+    public JButton getBtn_sair() {
+        return btn_sair;
+    }
+
+    public void setBtn_sair(JButton btn_sair) {
+        this.btn_sair = btn_sair;
+    }
+
+    public JLabel getjLabel2() {
+        return jLabel2;
+    }
+
+    public void setjLabel2(JLabel jLabel2) {
+        this.jLabel2 = jLabel2;
+    }
+
+    public JLabel getLbl_senha() {
         return lbl_senha;
     }
 
-    public void setLbl_senha(Label lbl_senha) {
+    public void setLbl_senha(JLabel lbl_senha) {
         this.lbl_senha = lbl_senha;
     }
 
-    public Label getLbl_usuario() {
+    public JLabel getLbl_usuario() {
         return lbl_usuario;
     }
 
-    public void setLbl_usuario(Label lbl_usuario) {
+    public void setLbl_usuario(JLabel lbl_usuario) {
         this.lbl_usuario = lbl_usuario;
     }
 
@@ -73,6 +92,9 @@ public class Login extends javax.swing.JFrame {
         this.txt_usuario = txt_usuario;
     }
 
+   
+
+  
     
     
     
@@ -85,65 +107,54 @@ public class Login extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        lbl_usuario = new java.awt.Label();
-        lbl_senha = new java.awt.Label();
-        txt_usuario = new java.awt.TextField();
-        txt_senha = new java.awt.TextField();
         bt_entrar = new javax.swing.JButton();
+        txt_usuario = new java.awt.TextField();
         bt_cadastro = new javax.swing.JButton();
+        btn_sair = new javax.swing.JButton();
+        txt_senha = new java.awt.TextField();
+        lbl_senha = new javax.swing.JLabel();
+        lbl_usuario = new javax.swing.JLabel();
+        jLabel2 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        lbl_usuario.setText("Usuario");
+        bt_entrar.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        bt_entrar.setText("Entrar");
+        bt_entrar.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        bt_entrar.setContentAreaFilled(false);
+        bt_entrar.addActionListener(this::bt_entrarActionPerformed);
+        getContentPane().add(bt_entrar, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 330, -1, -1));
+        getContentPane().add(txt_usuario, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 230, 110, 20));
 
-        lbl_senha.setText("Senha");
+        bt_cadastro.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        bt_cadastro.setText("Cadastrar");
+        bt_cadastro.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        bt_cadastro.setContentAreaFilled(false);
+        bt_cadastro.addActionListener(this::bt_cadastroActionPerformed);
+        getContentPane().add(bt_cadastro, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 330, -1, -1));
+
+        btn_sair.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        btn_sair.setText("Sair");
+        btn_sair.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        btn_sair.setContentAreaFilled(false);
+        btn_sair.addActionListener(this::btn_sairActionPerformed);
+        getContentPane().add(btn_sair, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 330, 60, -1));
 
         txt_senha.addActionListener(this::txt_senhaActionPerformed);
+        getContentPane().add(txt_senha, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 270, 110, 20));
 
-        bt_entrar.setText("Entrar");
-        bt_entrar.addActionListener(this::bt_entrarActionPerformed);
+        lbl_senha.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
+        lbl_senha.setText("Senha");
+        getContentPane().add(lbl_senha, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 260, -1, -1));
 
-        bt_cadastro.setText("Cadastrar");
-        bt_cadastro.addActionListener(this::bt_cadastroActionPerformed);
+        lbl_usuario.setBackground(new java.awt.Color(242, 151, 65));
+        lbl_usuario.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
+        lbl_usuario.setText("Usuário");
+        getContentPane().add(lbl_usuario, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 220, -1, -1));
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-        getContentPane().setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(49, 49, 49)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(bt_entrar)
-                        .addGap(18, 18, 18)
-                        .addComponent(bt_cadastro))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(lbl_usuario, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(lbl_senha, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(txt_senha, javax.swing.GroupLayout.DEFAULT_SIZE, 100, Short.MAX_VALUE)
-                            .addComponent(txt_usuario, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
-                .addContainerGap(181, Short.MAX_VALUE))
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(36, 36, 36)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(lbl_usuario, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(txt_usuario, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(lbl_senha, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(txt_senha, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(48, 48, 48)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(bt_entrar)
-                    .addComponent(bt_cadastro))
-                .addContainerGap(143, Short.MAX_VALUE))
-        );
+        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/png.png"))); // NOI18N
+        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(-510, -480, 1160, 1220));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -153,16 +164,20 @@ public class Login extends javax.swing.JFrame {
     }//GEN-LAST:event_txt_senhaActionPerformed
 
     private void bt_entrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bt_entrarActionPerformed
-   c.loginUsuarios();
-        // TODO add your handling code here:
+        controle.loginUsuarios();
     }//GEN-LAST:event_bt_entrarActionPerformed
 
     private void bt_cadastroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bt_cadastroActionPerformed
-        
-        Cadastro cad = new Cadastro();
-        cad.setVisible(true);
+ 
+
+       new Cadastro().setVisible(true);
         
     }//GEN-LAST:event_bt_cadastroActionPerformed
+
+    private void btn_sairActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_sairActionPerformed
+
+        this.dispose();
+    }//GEN-LAST:event_btn_sairActionPerformed
 
     /**
      * @param args the command line arguments
@@ -189,13 +204,15 @@ public class Login extends javax.swing.JFrame {
 //        java.awt.EventQueue.invokeLater(() -> new Login().setVisible(true));
 //    }
 
-    private ControleLogin c;
+   private ControleLogin controle;
     
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton bt_cadastro;
     private javax.swing.JButton bt_entrar;
-    private java.awt.Label lbl_senha;
-    private java.awt.Label lbl_usuario;
+    private javax.swing.JButton btn_sair;
+    private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel lbl_senha;
+    private javax.swing.JLabel lbl_usuario;
     private java.awt.TextField txt_senha;
     private java.awt.TextField txt_usuario;
     // End of variables declaration//GEN-END:variables
