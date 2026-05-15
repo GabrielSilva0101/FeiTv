@@ -249,6 +249,15 @@ public class TelaPrincipal extends javax.swing.JFrame {
         this.txt_buscar = txt_buscar;
     }
 
+    public JButton getBtn_gatos() {
+        return btn_gatos;
+    }
+
+    public void setBtn_gatos(JButton btn_gatos) {
+        this.btn_gatos = btn_gatos;
+    }
+
+    
   
 
     /**
@@ -282,6 +291,7 @@ public class TelaPrincipal extends javax.swing.JFrame {
         lbl_feitv = new javax.swing.JLabel();
         btn_sair = new javax.swing.JButton();
         lbl_ola = new javax.swing.JLabel();
+        btn_gatos = new javax.swing.JButton();
         jLabel2 = new javax.swing.JLabel();
 
         jButton3.setText("jButton1");
@@ -338,8 +348,8 @@ public class TelaPrincipal extends javax.swing.JFrame {
                         .addComponent(btn_curtir, javax.swing.GroupLayout.PREFERRED_SIZE, 193, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(78, 78, 78)
                         .addComponent(btn_descurtir, javax.swing.GroupLayout.PREFERRED_SIZE, 191, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 120, Short.MAX_VALUE)
-                        .addComponent(btn_addplaylist, javax.swing.GroupLayout.PREFERRED_SIZE, 192, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 52, Short.MAX_VALUE)
+                        .addComponent(btn_addplaylist, javax.swing.GroupLayout.PREFERRED_SIZE, 238, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap())
         );
         jPanel1Layout.setVerticalGroup(
@@ -350,9 +360,9 @@ public class TelaPrincipal extends javax.swing.JFrame {
                     .addComponent(txt_buscar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(lbl_buscar)
                     .addComponent(btn_pesquisar))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGap(18, 18, 18)
                 .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 317, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(24, 24, 24)
+                .addGap(18, 18, 18)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btn_addplaylist)
                     .addComponent(btn_descurtir)
@@ -400,10 +410,10 @@ public class TelaPrincipal extends javax.swing.JFrame {
                         .addComponent(jLabel1)
                         .addGap(18, 18, 18)
                         .addComponent(cbPlaylist, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(0, 0, Short.MAX_VALUE))
+                        .addGap(0, 552, Short.MAX_VALUE))
                     .addGroup(jPanel2Layout.createSequentialGroup()
                         .addComponent(btn_novaPlaylist, javax.swing.GroupLayout.PREFERRED_SIZE, 204, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 72, Short.MAX_VALUE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 50, Short.MAX_VALUE)
                         .addComponent(btn_excluirPlaylist, javax.swing.GroupLayout.PREFERRED_SIZE, 179, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(61, 61, 61)
                         .addComponent(btn_removerVideo, javax.swing.GroupLayout.PREFERRED_SIZE, 264, javax.swing.GroupLayout.PREFERRED_SIZE)))
@@ -428,7 +438,7 @@ public class TelaPrincipal extends javax.swing.JFrame {
 
         jTabbedPane1.addTab("Favoritos", jPanel2);
 
-        getContentPane().add(jTabbedPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 120, -1, 470));
+        getContentPane().add(jTabbedPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 120, 770, 470));
 
         lbl_feitv.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
         lbl_feitv.setText("Fei Tv");
@@ -439,14 +449,20 @@ public class TelaPrincipal extends javax.swing.JFrame {
         btn_sair.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
         btn_sair.setContentAreaFilled(false);
         btn_sair.addActionListener(this::btn_sairActionPerformed);
-        getContentPane().add(btn_sair, new org.netbeans.lib.awtextra.AbsoluteConstraints(730, 10, 60, -1));
+        getContentPane().add(btn_sair, new org.netbeans.lib.awtextra.AbsoluteConstraints(750, 10, 60, -1));
 
         lbl_ola.setFont(new java.awt.Font("Segoe UI Historic", 0, 18)); // NOI18N
         lbl_ola.setText("Olá...");
         getContentPane().add(lbl_ola, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 70, -1, 20));
 
+        btn_gatos.setAlignmentY(0.4F);
+        btn_gatos.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        btn_gatos.setContentAreaFilled(false);
+        btn_gatos.addActionListener(this::btn_gatosActionPerformed);
+        getContentPane().add(btn_gatos, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 620, 30, 20));
+
         jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/png.png"))); // NOI18N
-        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(-470, 0, 1280, 670));
+        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(-430, 0, 1260, 670));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -563,6 +579,12 @@ public class TelaPrincipal extends javax.swing.JFrame {
         new TelaLogin().setVisible(true);
     }//GEN-LAST:event_btn_sairActionPerformed
 
+    private void btn_gatosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_gatosActionPerformed
+        // TODO add your handling code here:
+        this.dispose();
+        new Gato().setVisible(true);
+    }//GEN-LAST:event_btn_gatosActionPerformed
+
 //    /**
 //     * @param args the command line arguments
 //     */
@@ -595,6 +617,7 @@ public class TelaPrincipal extends javax.swing.JFrame {
     private javax.swing.JButton btn_curtir;
     private javax.swing.JButton btn_descurtir;
     private javax.swing.JButton btn_excluirPlaylist;
+    private javax.swing.JButton btn_gatos;
     private javax.swing.JButton btn_novaPlaylist;
     private javax.swing.JButton btn_pesquisar;
     private javax.swing.JButton btn_removerVideo;
