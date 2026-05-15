@@ -13,7 +13,6 @@ public class UsuarioDAO {
         this.conn = conn;
     }
 
-    // Funcionalidade: Cadastrar novo usuário
     public void inserir(Usuario usuario) throws SQLException {
         String sql = "INSERT INTO tbusuarios (nome, usuario, senha) VALUES (?, ?, ?)";
         PreparedStatement statement = conn.prepareStatement(sql);
@@ -24,7 +23,6 @@ public class UsuarioDAO {
         statement.close();
     }
 
-    // Funcionalidade: Login de usuário
     public ResultSet consultar(Usuario usuario) throws SQLException {
         String sql = "SELECT * FROM tbusuarios WHERE usuario = ? AND senha = ?";
         PreparedStatement statement = conn.prepareStatement(sql);

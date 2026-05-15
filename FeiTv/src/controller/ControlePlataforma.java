@@ -15,8 +15,7 @@ import java.util.ArrayList;
 public class ControlePlataforma {
 
     public void buscarVideo(String nome) {
-        // Implementar lógica de busca chamando VideoDAO.buscar(nome)
-        // e atualizando a JTable ou JList na View
+        
     }
 
     public void interagirVideo(int idVideo, boolean isCurtida) {
@@ -61,7 +60,6 @@ public class ControlePlataforma {
         return resultados;
     }
 
-    // Adiciona ou remove o vídeo na tabela de relacionamento Lista_Video
     public void gerenciarVideoNaLista(int idLista, int idVideo, boolean adicionar) {
         Conexao conexao = new Conexao();
         try {
@@ -80,7 +78,6 @@ public class ControlePlataforma {
         }
     }
 
-    // Retorna todos os vídeos que estão dentro de uma playlist específica
     public List<Video> listarVideosDaPlaylist(int idLista) {
         Conexao conexao = new Conexao();
         List<Video> videos = new ArrayList<>();
@@ -94,7 +91,6 @@ public class ControlePlataforma {
         return videos;
     }
 
-    // Retorna o ResultSet para a View popular o JComboBox
     public java.util.List<model.ListaReproducao> listarMinhasPlaylists(String usuarioId) {
         dao.Conexao conexao = new dao.Conexao();
         try {

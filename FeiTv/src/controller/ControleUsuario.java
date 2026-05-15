@@ -10,7 +10,6 @@ import javax.swing.JOptionPane;
 public class ControleUsuario {
 
     
-    // Método para ser chamado pela tela de Cadastro
     public void cadastrarUsuario(String nome, String user, String senha) {
         Usuario novoUsuario = new Usuario(nome, user, senha);
         Conexao conexao = new Conexao();
@@ -25,7 +24,6 @@ public class ControleUsuario {
         }
     }
 
-    // Método para ser chamado pela tela de Login
     public Usuario fazerLogin(String user, String senha) {
         Usuario usuario = new Usuario(null, user, senha);
         Conexao conexao = new Conexao();

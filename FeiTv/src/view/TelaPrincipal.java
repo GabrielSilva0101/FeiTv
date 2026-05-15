@@ -41,13 +41,10 @@ public class TelaPrincipal extends javax.swing.JFrame {
     }
 
     private void carregarPlaylists() {
-        // Onde você carrega as playlists na tela:
         java.util.List<model.ListaReproducao> listas = controle.listarMinhasPlaylists(usuarioLogado.getUsuario());
         cbPlaylist.removeAllItems(); // Limpa as antigas
 
-        // Percorre a lista e adiciona uma por uma no ComboBox
         for (model.ListaReproducao lista : listas) {
-            // Adiciona no formato "ID - Nome" para você conseguir pegar o ID depois na hora de salvar!
             cbPlaylist.addItem(lista.getId() + " - " + lista.getNome());
         }
     }
@@ -265,14 +262,6 @@ public class TelaPrincipal extends javax.swing.JFrame {
 
         jButton3 = new javax.swing.JButton();
         jTabbedPane1 = new javax.swing.JTabbedPane();
-        jPanel2 = new javax.swing.JPanel();
-        jLabel1 = new javax.swing.JLabel();
-        cbPlaylist = new javax.swing.JComboBox<>();
-        btn_novaPlaylist = new javax.swing.JButton();
-        btn_removerVideo = new javax.swing.JButton();
-        btn_excluirPlaylist = new javax.swing.JButton();
-        jScrollPane3 = new javax.swing.JScrollPane();
-        tabelaPlaylist = new javax.swing.JTable();
         jPanel1 = new javax.swing.JPanel();
         txt_buscar = new javax.swing.JTextField();
         lbl_buscar = new javax.swing.JLabel();
@@ -282,6 +271,14 @@ public class TelaPrincipal extends javax.swing.JFrame {
         btn_addplaylist = new javax.swing.JButton();
         jScrollPane2 = new javax.swing.JScrollPane();
         tabelaVideos = new javax.swing.JTable();
+        jPanel2 = new javax.swing.JPanel();
+        jLabel1 = new javax.swing.JLabel();
+        cbPlaylist = new javax.swing.JComboBox<>();
+        btn_novaPlaylist = new javax.swing.JButton();
+        btn_removerVideo = new javax.swing.JButton();
+        btn_excluirPlaylist = new javax.swing.JButton();
+        jScrollPane3 = new javax.swing.JScrollPane();
+        tabelaPlaylist = new javax.swing.JTable();
         lbl_feitv = new javax.swing.JLabel();
         btn_sair = new javax.swing.JButton();
         lbl_ola = new javax.swing.JLabel();
@@ -291,73 +288,6 @@ public class TelaPrincipal extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-
-        jLabel1.setText("Selecione a Playlist");
-
-        cbPlaylist.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
-        cbPlaylist.addActionListener(this::cbPlaylistActionPerformed);
-
-        btn_novaPlaylist.setText("[   Nova Playlist   ]");
-        btn_novaPlaylist.addActionListener(this::btn_novaPlaylistActionPerformed);
-
-        btn_removerVideo.setText("[   Remover Vídeo dos favoritos  ]");
-        btn_removerVideo.addActionListener(this::btn_removerVideoActionPerformed);
-
-        btn_excluirPlaylist.setText("[   Excluir Lista   ]");
-        btn_excluirPlaylist.addActionListener(this::btn_excluirPlaylistActionPerformed);
-
-        tabelaPlaylist.setModel(new javax.swing.table.DefaultTableModel(
-            new Object [][] {
-                {null, null, null, null, null, null},
-                {null, null, null, null, null, null},
-                {null, null, null, null, null, null},
-                {null, null, null, null, null, null}
-            },
-            new String [] {
-                "ID", "Título", "Tipo", "Duração/Tempo", "Curtidas", "Descurtidas"
-            }
-        ));
-        jScrollPane3.setViewportView(tabelaPlaylist);
-
-        javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
-        jPanel2.setLayout(jPanel2Layout);
-        jPanel2Layout.setHorizontalGroup(
-            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel2Layout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jScrollPane3)
-                    .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addComponent(jLabel1)
-                        .addGap(18, 18, 18)
-                        .addComponent(cbPlaylist, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(0, 0, Short.MAX_VALUE))
-                    .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addComponent(btn_novaPlaylist, javax.swing.GroupLayout.PREFERRED_SIZE, 204, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 93, Short.MAX_VALUE)
-                        .addComponent(btn_excluirPlaylist, javax.swing.GroupLayout.PREFERRED_SIZE, 179, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(77, 77, 77)
-                        .addComponent(btn_removerVideo, javax.swing.GroupLayout.PREFERRED_SIZE, 227, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap())
-        );
-        jPanel2Layout.setVerticalGroup(
-            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel2Layout.createSequentialGroup()
-                .addContainerGap(14, Short.MAX_VALUE)
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel1)
-                    .addComponent(cbPlaylist, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 339, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(btn_novaPlaylist)
-                    .addComponent(btn_excluirPlaylist)
-                    .addComponent(btn_removerVideo))
-                .addGap(0, 19, Short.MAX_VALUE))
-        );
-
-        jTabbedPane1.addTab("Favoritos", jPanel2);
 
         jPanel1.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
 
@@ -430,6 +360,73 @@ public class TelaPrincipal extends javax.swing.JFrame {
         );
 
         jTabbedPane1.addTab("Explorar Vídeos", jPanel1);
+
+        jLabel1.setText("Selecione a Playlist");
+
+        cbPlaylist.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        cbPlaylist.addActionListener(this::cbPlaylistActionPerformed);
+
+        btn_novaPlaylist.setText("[   Nova Playlist   ]");
+        btn_novaPlaylist.addActionListener(this::btn_novaPlaylistActionPerformed);
+
+        btn_removerVideo.setText("[   Remover Vídeo dos favoritos  ]");
+        btn_removerVideo.addActionListener(this::btn_removerVideoActionPerformed);
+
+        btn_excluirPlaylist.setText("[   Excluir Lista   ]");
+        btn_excluirPlaylist.addActionListener(this::btn_excluirPlaylistActionPerformed);
+
+        tabelaPlaylist.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null}
+            },
+            new String [] {
+                "ID", "Título", "Tipo", "Duração/Tempo", "Curtidas", "Descurtidas"
+            }
+        ));
+        jScrollPane3.setViewportView(tabelaPlaylist);
+
+        javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
+        jPanel2.setLayout(jPanel2Layout);
+        jPanel2Layout.setHorizontalGroup(
+            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel2Layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jScrollPane3)
+                    .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addComponent(jLabel1)
+                        .addGap(18, 18, 18)
+                        .addComponent(cbPlaylist, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(0, 0, Short.MAX_VALUE))
+                    .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addComponent(btn_novaPlaylist, javax.swing.GroupLayout.PREFERRED_SIZE, 204, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 72, Short.MAX_VALUE)
+                        .addComponent(btn_excluirPlaylist, javax.swing.GroupLayout.PREFERRED_SIZE, 179, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(61, 61, 61)
+                        .addComponent(btn_removerVideo, javax.swing.GroupLayout.PREFERRED_SIZE, 264, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap())
+        );
+        jPanel2Layout.setVerticalGroup(
+            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel2Layout.createSequentialGroup()
+                .addContainerGap(14, Short.MAX_VALUE)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel1)
+                    .addComponent(cbPlaylist, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 339, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(btn_novaPlaylist)
+                    .addComponent(btn_excluirPlaylist)
+                    .addComponent(btn_removerVideo))
+                .addGap(0, 19, Short.MAX_VALUE))
+        );
+
+        jTabbedPane1.addTab("Favoritos", jPanel2);
 
         getContentPane().add(jTabbedPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 120, -1, 470));
 

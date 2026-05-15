@@ -18,7 +18,6 @@ public class VideoDAO {
     }
     
 
-    // Funcionalidade: Buscar vídeo por nome e Listar informações
     public List<Video> buscarPorNome(String termoBusca) throws SQLException {
         List<Video> videosEncontrados = new ArrayList<>();
         String sql = "SELECT * FROM tbvideos WHERE titulo ILIKE ?"; 
@@ -31,7 +30,6 @@ public class VideoDAO {
             Video v;
             String tipo = rs.getString("tipo");
             
-            // Aplicação prática de Polimorfismo
             if (tipo.equalsIgnoreCase("Filme")) {
                 v = new Filme(rs.getInt("id"), rs.getString("titulo"), rs.getInt("duracao"));
             } else {
@@ -46,7 +44,6 @@ public class VideoDAO {
         return videosEncontrados;
     }
 
-    // Funcionalidade: Curtir vídeo
     public void adicionarCurtida(int idVideo) throws SQLException {
         String sql = "UPDATE tbvideos SET curtidas = curtidas + 1 WHERE id = ?";
         PreparedStatement statement = conn.prepareStatement(sql);
@@ -55,7 +52,6 @@ public class VideoDAO {
         statement.close();
     }
 
-    // Funcionalidade: Descurtir vídeo
     public void adicionarDescurtida(int idVideo) throws SQLException {
         String sql = "UPDATE tbvideos SET descurtidas = descurtidas + 1 WHERE id = ?";
         PreparedStatement statement = conn.prepareStatement(sql);

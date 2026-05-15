@@ -5,7 +5,6 @@
 package view;
 
 import controller.ControleUsuario;
-import java.awt.Label;
 import java.awt.TextField;
 import javax.swing.JButton;
 import javax.swing.JLabel;
@@ -116,6 +115,8 @@ public class Cadastro extends javax.swing.JFrame {
         this.txt_usuario = txt_usuario;
     }
 
+    
+
  
     
     
@@ -149,12 +150,14 @@ public class Cadastro extends javax.swing.JFrame {
 
         bt_salvar.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         bt_salvar.setText("Salvar");
+        bt_salvar.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
         bt_salvar.setContentAreaFilled(false);
         bt_salvar.addActionListener(this::bt_salvarActionPerformed);
         getContentPane().add(bt_salvar, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 310, -1, -1));
 
         bt_voltar.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         bt_voltar.setText("Voltar");
+        bt_voltar.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
         bt_voltar.setContentAreaFilled(false);
         bt_voltar.addActionListener(this::bt_voltarActionPerformed);
         getContentPane().add(bt_voltar, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 310, -1, -1));
@@ -173,9 +176,9 @@ public class Cadastro extends javax.swing.JFrame {
         lbl_usuario1.setText("Usuário");
         getContentPane().add(lbl_usuario1, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 180, -1, -1));
 
-        lbl_frut.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/Gemini_Generated_Image_53onjh53onjh53on.png"))); // NOI18N
+        lbl_frut.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/fundo1.png"))); // NOI18N
         lbl_frut.setOpaque(true);
-        getContentPane().add(lbl_frut, new org.netbeans.lib.awtextra.AbsoluteConstraints(-90, -10, 670, 560));
+        getContentPane().add(lbl_frut, new org.netbeans.lib.awtextra.AbsoluteConstraints(-340, 0, 910, 560));
         getContentPane().add(jSeparator1, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 430, -1, -1));
 
         pack();

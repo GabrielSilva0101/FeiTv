@@ -28,6 +28,10 @@ public class TelaLogin extends javax.swing.JFrame {
         return controle;
     }
 
+    public void setControle(ControleLogin controle) {
+        this.controle = controle;
+    }
+
     public JButton getBt_cadastro() {
         return bt_cadastro;
     }
@@ -92,6 +96,7 @@ public class TelaLogin extends javax.swing.JFrame {
         this.txt_usuario = txt_usuario;
     }
 
+  
    
 
   
